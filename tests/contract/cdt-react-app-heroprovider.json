@@ -1,9 +1,9 @@
 {
   "consumer": {
-    "name": "hero-consumer"
+    "name": "cdt-react-app"
   },
   "provider": {
-    "name": "hero-provider"
+    "name": "HeroProvider"
   },
   "interactions": [
     {

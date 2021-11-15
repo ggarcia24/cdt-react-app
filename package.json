@@ -3,10 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@apollo/client": "^3.4.17",
     "@testing-library/jest-dom": "^5.15.0",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "apollo-boost": "^0.4.9",
     "axios": "^0.24.0",
+    "graphql": "^16.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
@@ -16,7 +19,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "test:pact": "cross-env CI=true react-scripts test --runInBand --setupFiles ./tests/contract/pact-setup.js --setupFilesAfterEnv ./tests/contract/jest-wrapper.js --testMatch \"**/*.test.pact.js\"",
+    "test:pact": "cross-env CI=true react-scripts test --runInBand --testMatch \"**/*.test.pact.js\"",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -40,6 +43,7 @@
   "devDependencies": {
     "@pact-foundation/pact": "^9.16.5",
     "@pact-foundation/pact-node": "^10.14.0",
-    "cross-env": "^7.0.3"
+    "cross-env": "^7.0.3",
+    "jest-pact": "^0.9.1"
   }
 }
