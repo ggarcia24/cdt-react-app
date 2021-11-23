@@ -7,5 +7,5 @@ module.exports = {
   port: 8080,
   log: path.resolve(process.cwd(), "logs", "pact.log"),
   loglevel: "DEBUG",
-  dir: path.resolve(process.cwd(), "tests/contract"),
+  dir: path.resolve(process.cwd(), "test/contract"),
 };

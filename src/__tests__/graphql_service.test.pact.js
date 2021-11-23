@@ -2,7 +2,7 @@ import { GraphQLInteraction, Matchers } from "@pact-foundation/pact";
 import ExchangeRatesService from "../exchangeRates.service";
 import { pactWith } from "jest-pact";
 
-import pactConfig from "../../tests/contract/pact.config";
+import pactConfig from "../../test/contract/pact.config";
 
 pactWith(
   {

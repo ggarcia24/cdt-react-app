@@ -3,7 +3,7 @@ import HeroService from "../hero.service";
 import { Matchers } from "@pact-foundation/pact";
 import Hero from "../hero";
 
-import pactConfig from "../../tests/contract/pact.config";
+import pactConfig from "../../test/contract/pact.config";
 
 const contentTypeJsonMatcher = Matchers.term({
   matcher: "application\\/json; *charset=utf-8",
