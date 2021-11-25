@@ -1,10 +1,8 @@
 import React from "react";
-import styled from "styled-components";
 import { List, Checkbox, Input, Button, Popconfirm, message } from "antd";
 import { gql, useMutation, useQuery } from "@apollo/client";
 
 /** App theme */
-// import Colors from "../../theme/colors";
 
 /** GraphQL Queries */
 const UPDATE_TODO = gql`
@@ -43,29 +41,24 @@ const DELETE_TODO = gql`
     }
   }
 `;
-const LIST_TODOS = gql`
+export const LIST_TODOS = gql`
   query ListTodos {
     listToDos {
       id
-      createdAt
       description
-      updatedAt
-      dueDate
       completed
     }
   }
 `;
 
-const DataList = (props) => {
+export const DataList = (props) => {
+  const { loading, error, data, variables } = useQuery(LIST_TODOS, {
+    variables: { foo: "bar" },
+  });
   const [description, updateDescription] = React.useState("");
   const [updateToDoMutation] = useMutation(UPDATE_TODO);
   const [createToDoMutation] = useMutation(CREATE_TODO);
   const [deleteToDoMutation] = useMutation(DELETE_TODO);
-  //   const { data } = props;
-
-  const { loading, error, data } = useQuery(LIST_TODOS);
-
-  console.log(data);
 
   if (loading) return "Loading...";
   if (error) return `Error! ${error.message}`;
