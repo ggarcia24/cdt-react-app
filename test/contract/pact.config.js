@@ -1,11 +1,11 @@
-const path = require("path");
+const path = require('path');
 
 module.exports = {
-  consumer: "cdt-react-app",
+  consumer: 'cdt-react-app',
   cors: true,
-  host: "localhost",
+  host: 'localhost',
   port: 8080,
-  log: path.resolve(process.cwd(), "logs", "pact.log"),
-  loglevel: "DEBUG",
-  dir: path.resolve(process.cwd(), "test/contract"),
+  log: path.resolve(process.cwd(), 'logs', 'pact.log'),
+  loglevel: 'DEBUG',
+  dir: path.resolve(process.cwd(), 'test/contract'),
 };

@@ -1,32 +1,32 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { createAuthLink } from "aws-appsync-auth-link";
-import { createSubscriptionHandshakeLink } from "aws-appsync-subscription-link";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { createAuthLink } from 'aws-appsync-auth-link';
+import { createSubscriptionHandshakeLink } from 'aws-appsync-subscription-link';
 // import { AUTH_TYPE } from "aws-appsync";
 import {
   ApolloProvider,
   ApolloClient,
   ApolloLink,
   InMemoryCache,
-} from "@apollo/client";
-import reportWebVitals from "./reportWebVitals";
+} from '@apollo/client';
+import reportWebVitals from './reportWebVitals';
 
-import "./index.css";
+import './index.css';
 
 /** Ant design */
-import "antd/dist/antd.css";
+import 'antd/dist/antd.css';
 
 /** App entry */
-import App from "./App";
+import App from './App';
 
 /** AWS config */
-import AppSyncConfig from "./aws-exports";
+import AppSyncConfig from './aws-exports';
 
 const config = {
   url: AppSyncConfig.GraphQlApiUrl,
   region: process.env.REACT_APP_REGION,
   auth: {
-    type: "API_KEY",
+    type: 'API_KEY',
     apiKey: AppSyncConfig.GraphQlApiKeyDefault,
   },
 };
@@ -38,7 +38,7 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
   defaultOptions: {
     watchQuery: {
-      fetchPolicy: "cache-and-network",
+      fetchPolicy: 'cache-and-network',
     },
   },
 });
@@ -47,7 +47,7 @@ ReactDOM.render(
   <ApolloProvider client={client}>
     <App />
   </ApolloProvider>,
-  document.getElementById("root")
+  document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function
